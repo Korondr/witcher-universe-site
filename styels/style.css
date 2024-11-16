@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Gabriela&display=swap');
+
+/* Основные стили */
+body {
+    font-family: Gabriela, serif;
+    background: linear-gradient(0deg, #000000 0%, #211d1a 90%) no-repeat;
+}
+
+.nav-link {
+    color: aliceblue;
+}
+
+.navbar-nav .nav-link.active {
+    color: rgb(155, 154, 154);
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+.navbar-toggler {
+    background-color: rgb(83, 82, 82);
+}
+
+
+
+/* Контейнер и изображения */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    padding: 1em;
+}
+
+.imaidges {
+    margin: 1em;
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+}
+
+.imaidges > img {
+    width: 100%;
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+}
+
+.imaidges > .info {
+    text-align: center;
+}
+
+/* Эффект увеличения при наведении */
+.imaidges:hover {
+    transform: scale(1.1); /* Увеличиваем изображение на 10% */
+}
+
+/* Анимация */
+@keyframes scaleAnim {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shakeAnim {
+    0%, 100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+    15% {
+        transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+        transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+        transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+}
+
+.slide-text,
+.footer-text {
+    color: rgb(120, 195, 170);
+    margin: auto auto;
+}
+
+.index {
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.index-text {
+    line-height: 100px;
+}
+
+/* Футер */
+footer {
+    background: linear-gradient(0deg, #302a25 0%, #141313 90%);
+}
+
+/* Медиа-запросы */
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .imaidges {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Медиа ссылки и анимация */
+.media-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-anim {
+    animation: shakeAnim 2s ease 0s infinite normal forwards;
+}
